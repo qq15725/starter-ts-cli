@@ -1,5 +1,5 @@
 import consola from 'consola'
-import { createCli } from './cli-create'
+import { createCli } from './create-cli'
 
 createCli({ cwd: process.cwd() })
   .runMatchedCommand()
