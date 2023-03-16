@@ -4,10 +4,6 @@ node_modules/
 dist/
 types/
 
-# Lock
-package-lock.json
-pnpm-lock.yaml
-
 # IDE user config
 .vscode/
 .idea/

@@ -1,21 +1,21 @@
 {
-  "name": "pkg-name",
+  "name": "starter-ts-cli",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.9.0",
-  "description": "",
+  "description": "Starter template for TypeScript command line interface library",
   "author": "wxm",
   "license": "MIT",
-  "homepage": "https://github.com/qq15725/pkg-name",
+  "homepage": "https://github.com/qq15725/starter-ts-cli",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qq15725/pkg-name.git"
+    "url": "git+https://github.com/qq15725/starter-ts-cli.git"
   },
   "engines": {
     "node": ">=14.18.1"
   },
   "bugs": {
-    "url": "https://github.com/qq15725/pkg-name/issues"
+    "url": "https://github.com/qq15725/starter-ts-cli/issues"
   },
   "keywords": [],
   "exports": {
@@ -28,7 +28,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "pkg-name": "./bin/index.mjs"
+    "cli": "./bin/index.mjs"
   },
   "files": [
     "bin",
@@ -36,18 +36,19 @@
   ],
   "scripts": {
     "stub": "unbuild --stub",
+    "lint": "eslint src",
     "build": "unbuild",
-    "lint": "eslint .",
-    "release": "bumpp package.json --commit \"chore(release): publish v%s\" --push --tag && pnpm publish",
-    "pkg-name": "node ./bin/index.mjs"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "release": "bumpp package.json --commit \"release: v%s\" --push --all --tag",
+    "cli": "node ./bin/index.mjs"
   },
   "devDependencies": {
     "@qq15725/eslint-config": "^1.1.0",
-    "@types/node": "^18.11.18",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.33.0",
-    "typescript": "^4.9.4",
-    "unbuild": "^1.1.1"
+    "@types/node": "^18.15.3",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.36.0",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2"
   },
   "dependencies": {
     "cac": "^6.7.14",
